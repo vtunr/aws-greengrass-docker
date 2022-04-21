@@ -36,8 +36,7 @@ COPY "greengrass-entrypoint.sh" /
 COPY "${GREENGRASS_ZIP_SHA256}" /
 
 # Install Greengrass v2 dependencies
-RUN yum update -y && yum install -y python37 tar unzip wget sudo procps which && \
-    java-11-amazon-corretto-headless && \
+RUN yum update -y && yum install -y python37 tar unzip wget sudo procps which java-11-openjdk-devel && \
     wget $GREENGRASS_RELEASE_URI && sha256sum -c ${GREENGRASS_ZIP_SHA256} && \
     rm -rf /var/cache/yum && \
     chmod +x /greengrass-entrypoint.sh && \
