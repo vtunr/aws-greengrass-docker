@@ -37,7 +37,7 @@ COPY "${GREENGRASS_ZIP_SHA256}" /
 
 # Install Greengrass v2 dependencies
 RUN yum update -y && yum install -y python37 tar unzip wget sudo procps which && \
-    amazon-linux-extras enable python3.8 && yum install -y python3.8 java-11-amazon-corretto-headless && \
+    java-11-amazon-corretto-headless && \
     wget $GREENGRASS_RELEASE_URI && sha256sum -c ${GREENGRASS_ZIP_SHA256} && \
     rm -rf /var/cache/yum && \
     chmod +x /greengrass-entrypoint.sh && \
