@@ -1,7 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-FROM amazonlinux:2
+FROM ubuntu:latest
 
 # Replace the args to lock to a specific version
 ARG GREENGRASS_RELEASE_VERSION=2.5.4
